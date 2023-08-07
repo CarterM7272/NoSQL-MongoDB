@@ -1,20 +1,10 @@
 # Social Network API with NoSQL MongoDB
 
 ## Table of Contents
-
-- [Features](#features)
 - [Usage](#usage)
 - [API Routes](#api-routes)
 - [Contributions](#contributions)
 - [License](#license)
-
-## Features
-
-- Robust API built with Express.js.
-- Integration with MongoDB for efficient data management.
-- Utilization of Mongoose ODM for structured object modeling.
-- Ability to format timestamps with a choice of JavaScript date libraries.
-- Detailed error handling and validations for data integrity.
 
 ## Usage
 
@@ -56,7 +46,3 @@ N/A
 N/A
 
 ---
-
-Made with ❤️ by [Your Name](your-github-link)
-
-© 2023 Your Name. All Rights Reserved.
