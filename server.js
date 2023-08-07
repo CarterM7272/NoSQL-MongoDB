@@ -1,26 +1,16 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const userRoutes = require('./routes/API/user-routes');
-// other route imports...
+const mongoose = require('mongoose'); // If you're using mongoose in this file, you need to require it.
+const db = require('./config/connection'); // Assuming this returns a mongoose connection.
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', {
-  useFindAndModify: false,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+app.use(require('./routes'));
 
-mongoose.set('useCreateIndex', true);
-mongoose.set('debug', true);
+mongoose.set('debug', true); // This sets mongoose to run in debug mode.
 
-app.use('/api/users', userRoutes);
-// other route uses...
-
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
-});
+app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
